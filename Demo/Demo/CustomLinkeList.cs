@@ -39,6 +39,19 @@ namespace Demo
             }
             size++;
         }
+
+        public void insertLast(int Value)
+        {
+            if (size == 0)
+            {
+                insertFirst(Value);
+                return;
+            }
+            Node node = new Node(Value);
+            tail.Next = node;
+            tail = node;
+            size++;
+        }
         public void Print()
         {
             Node temp = head;
