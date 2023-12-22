@@ -76,6 +76,28 @@ namespace Demo
             size--;
             return temp;
         }
+        public void insertInBtw(int Value, int index)
+        {
+            if (size == 0)
+            {
+                insertFirst(Value);
+                return;
+            }
+            if (index == size)
+            {
+                insertLast(Value);
+                return;
+            }
+            Node node = head;
+            Node newNode = new Node(Value);
+            for (int i = 1; i < index; i++)
+            {
+                node = node.Next;
+            }
+            newNode.Next = node.Next;
+            node.Next = newNode;
+            size++;
+        }
         public void Print()
         {
             Node temp = head;

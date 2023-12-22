@@ -26,5 +26,10 @@ class program
         Console.WriteLine("After removing the last element modified linked list:");
         LinkedList.Print();
 
+        int Index = 3;
+        Console.WriteLine("Insert node at postion {0}", Index);
+        LinkedList.insertInBtw(50, Index);
+        Console.WriteLine("After inserting element at position {0} ,modified linked list:", Index);
+        LinkedList.Print();
     }
 }
