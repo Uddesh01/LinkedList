@@ -52,6 +52,17 @@ namespace Demo
             tail = node;
             size++;
         }
+        public int RemoveFirst()
+        {
+            if (size == 0)
+            {
+                return -1;
+            }
+            int tempValue = head.Value;
+            head = head.Next;
+            size--;
+            return tempValue;
+        }
         public void Print()
         {
             Node temp = head;

@@ -17,5 +17,9 @@ class program
         LinkedList.insertLast(200);
         Console.WriteLine("After inserting the element at the last:");
         LinkedList.Print();
+
+        Console.WriteLine("Removed first node value is {0}", LinkedList.RemoveFirst());
+        Console.WriteLine("After removing the first element modified linked list:");
+        LinkedList.Print();
     }
 }
