@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-    public class CustomLinkedList
+    public class CustomLinkedList<T>
     {
         private Node head;
         private Node tail;
@@ -18,16 +18,16 @@ namespace Demo
         }
         public class Node
         {
-            public int Value;
+            public T Value;
             public Node Next;
 
-            public Node(int Value)
+            public Node(T Value)
             {
                 this.Value = Value;
             }
         }
 
-        public void insertFirst(int Value)
+        public void insertFirst(T Value)
         {
             Node node = new Node(Value);
             node.Next = head;
@@ -40,7 +40,7 @@ namespace Demo
             size++;
         }
 
-        public void insertLast(int Value)
+        public void insertLast(T Value)
         {
             if (size == 0)
             {
@@ -52,31 +52,31 @@ namespace Demo
             tail = node;
             size++;
         }
-        public int RemoveFirst()
+        public T RemoveFirst()
         {
             if (size == 0)
             {
-                return -1;
+                return default(T);
             }
-            int tempValue = head.Value;
+            T tempValue = head.Value;
             head = head.Next;
             size--;
             return tempValue;
         }
-        public int RemoveLast()
+        public T RemoveLast()
         {
             Node node = head;
             while (node.Next != tail)
             {
                 node = node.Next;
             }
-            int temp = tail.Value;
+            T temp = tail.Value;
             node.Next = null;
             tail = node;
             size--;
             return temp;
         }
-        public void insertInBtw(int Value, int index)
+        public void insertInBtw(T Value, int index)
         {
             if (size == 0)
             {
@@ -99,12 +99,12 @@ namespace Demo
             size++;
         }
 
-        public int removeAt(int index)
+        public T removeAt(int index)
         {
             if (size == 0)
             {
                 Console.WriteLine("Nothing to delete");
-                return -1;
+                return default(T);
             }
             if (index == size)
             {
@@ -121,7 +121,7 @@ namespace Demo
                 node = node.Next;
             }
             Node temp = node.Next;
-            int removedValue = temp.Value;
+            T removedValue = temp.Value;
             node.Next = temp.Next;
             return removedValue;
         }
