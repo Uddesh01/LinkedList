@@ -63,6 +63,19 @@ namespace Demo
             size--;
             return tempValue;
         }
+        public int RemoveLast()
+        {
+            Node node = head;
+            while (node.Next != tail)
+            {
+                node = node.Next;
+            }
+            int temp = tail.Value;
+            node.Next = null;
+            tail = node;
+            size--;
+            return temp;
+        }
         public void Print()
         {
             Node temp = head;

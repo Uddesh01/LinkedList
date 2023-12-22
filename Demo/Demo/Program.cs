@@ -21,5 +21,10 @@ class program
         Console.WriteLine("Removed first node value is {0}", LinkedList.RemoveFirst());
         Console.WriteLine("After removing the first element modified linked list:");
         LinkedList.Print();
+
+        Console.WriteLine("Removed last node value is {0}", LinkedList.RemoveLast());
+        Console.WriteLine("After removing the last element modified linked list:");
+        LinkedList.Print();
+
     }
 }
