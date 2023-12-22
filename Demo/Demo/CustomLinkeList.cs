@@ -98,6 +98,33 @@ namespace Demo
             node.Next = newNode;
             size++;
         }
+
+        public int removeAt(int index)
+        {
+            if (size == 0)
+            {
+                Console.WriteLine("Nothing to delete");
+                return -1;
+            }
+            if (index == size)
+            {
+                RemoveLast();
+            }
+            if (index == 0)
+            {
+                return RemoveFirst();
+            }
+
+            Node node = head;
+            for (int i = 1; i < index; i++)
+            {
+                node = node.Next;
+            }
+            Node temp = node.Next;
+            int removedValue = temp.Value;
+            node.Next = temp.Next;
+            return removedValue;
+        }
         public void Print()
         {
             Node temp = head;

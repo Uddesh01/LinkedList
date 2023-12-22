@@ -31,5 +31,11 @@ class program
         LinkedList.insertInBtw(50, Index);
         Console.WriteLine("After inserting element at position {0} ,modified linked list:", Index);
         LinkedList.Print();
+
+        int removeat = 3;
+        Console.WriteLine("Delete node from postion {0}", removeat);
+        Console.WriteLine("Removed node value is {0}", LinkedList.removeAt(removeat));
+        Console.WriteLine("After removing element from position {0} ,modified linked list:", removeat);
+        LinkedList.Print();
     }
 }
